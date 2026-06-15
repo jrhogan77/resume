@@ -3,576 +3,175 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Jason Hogan &mdash; Resume</title>
+<title>Jason Hogan &mdash; Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --orange:     #D4622A;
-    --orange-lt:  #F0845A;
-    --orange-bg:  #FDF3EE;
-    --navy:       #1A1F2E;
-    --slate:      #3D4454;
-    --mid:        #6B7280;
-    --rule:       #E5E7EB;
-    --sidebar-w:  260px;
+    --orange:    #D4622A;
+    --orange-lt: #F0845A;
+    --orange-bg: #FDF3EE;
+    --navy:      #1A1F2E;
+    --slate:     #3D4454;
+    --mid:       #6B7280;
   }
 
   body {
     font-family: 'Inter', sans-serif;
     background: #F4F4F0;
     color: var(--navy);
-    font-size: 11px;
-    line-height: 1.55;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  .page {
-    display: flex;
-    max-width: 1050px;
     min-height: 100vh;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
-  }
-
-  /* == SIDEBAR == */
-  .sidebar {
-    width: var(--sidebar-w);
-    min-width: var(--sidebar-w);
-    background: var(--navy);
-    color: #D1D5DB;
-    padding: 36px 20px 40px;
     display: flex;
-    flex-direction: column;
-    gap: 28px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
   }
 
-  .sidebar-name {
+  .card {
+    background: #fff;
+    max-width: 680px;
+    width: 100%;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+    display: flex;
+    overflow: hidden;
+  }
+
+  .accent {
+    width: 6px;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .body {
+    padding: 52px 48px 52px 44px;
+    flex: 1;
+  }
+
+  h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 36px;
     font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
   }
 
-  .sidebar-title {
-    font-size: 9.5px;
+  .headline {
+    font-size: 11px;
     font-weight: 500;
-    color: var(--orange-lt);
+    color: var(--orange);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-top: 5px;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+    margin-bottom: 28px;
   }
 
-  .sidebar-divider {
+  .divider {
     height: 2px;
     background: var(--orange);
     border-radius: 2px;
+    margin-bottom: 28px;
   }
 
-  .sidebar-section-label {
-    font-size: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--orange-lt);
-    margin-bottom: 10px;
+  .bio {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.75;
+    margin-bottom: 36px;
   }
 
-  .contact-item {
+  .doc-list {
     display: flex;
     flex-direction: column;
-    margin-bottom: 7px;
+    gap: 14px;
+    margin-bottom: 36px;
   }
-  .contact-label {
-    font-size: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--orange-lt);
-    margin-bottom: 1px;
-  }
-  .contact-value {
-    font-size: 10px;
-    color: #E5E7EB;
-    word-break: break-all;
-  }
-  .contact-value a { color: #E5E7EB; text-decoration: none; }
-  .contact-value a:hover { color: var(--orange-lt); }
 
-  .cert-item {
+  .doc-link {
     display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    margin-bottom: 6px;
-  }
-  .cert-dot {
-    width: 6px; height: 6px; min-width: 6px;
-    border-radius: 50%;
-    background: var(--orange);
-    margin-top: 4px;
-  }
-  .cert-text { font-size: 10px; color: #E5E7EB; line-height: 1.4; }
-
-  .pill-group { display: flex; flex-wrap: wrap; gap: 5px; }
-  .pill {
-    background: rgba(212,98,42,0.18);
-    color: #F0C4A8;
-    font-size: 8.5px;
-    font-weight: 500;
-    padding: 2px 7px;
-    border-radius: 20px;
-    border: 1px solid rgba(212,98,42,0.35);
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-  }
-
-  .artifact-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-  .artifact-list li {
-    font-size: 9px; color: #9CA3AF;
-    padding-left: 10px; position: relative; line-height: 1.4;
-  }
-  .artifact-list li::before {
-    content: '\203A'; position: absolute; left: 0;
-    color: var(--orange); font-weight: 700;
-  }
-  .artifact-label {
-    font-size: 8.5px; font-weight: 600;
-    color: #D1D5DB; display: block; margin-bottom: 1px;
-  }
-
-  /* == MAIN == */
-  .main {
-    flex: 1;
-    padding: 36px 36px 40px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .main-header {
-    border-bottom: 2px solid var(--orange);
-    padding-bottom: 14px;
-  }
-  .main-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px; font-weight: 700;
-    color: var(--navy); letter-spacing: 0.01em; line-height: 1.1;
-  }
-  .main-header .headline {
-    font-size: 11.5px; font-weight: 500;
-    color: var(--orange); margin-top: 4px;
-    letter-spacing: 0.04em; text-transform: uppercase;
-  }
-
-  .section-heading {
-    font-size: 9px; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--orange);
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 5px; margin-bottom: 12px;
-  }
-
-  .summary p { font-size: 10.5px; color: var(--slate); line-height: 1.65; }
-
-  .exp-block { margin-bottom: 18px; }
-  .exp-block:last-child { margin-bottom: 0; }
-
-  .exp-header {
-    display: flex; justify-content: space-between;
-    align-items: flex-start; gap: 8px; margin-bottom: 2px;
-  }
-  .exp-company { font-size: 12px; font-weight: 700; color: var(--navy); }
-  .exp-company span { font-size: 10px; font-weight: 400; color: var(--mid); }
-  .exp-dates { font-size: 9px; color: var(--mid); white-space: nowrap; margin-top: 2px; font-style: italic; }
-  .exp-title { font-size: 10px; font-weight: 600; color: var(--orange); margin-bottom: 6px; }
-  .exp-context { font-size: 10px; color: var(--slate); line-height: 1.6; margin-bottom: 8px; }
-
-  .exp-sub { margin-bottom: 8px; }
-  .exp-sub-label {
-    font-size: 8.5px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--navy); margin-bottom: 4px;
-  }
-
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-  .exp-bullets li {
-    font-size: 10px; color: var(--slate);
-    padding-left: 14px; position: relative; line-height: 1.55;
-  }
-  .exp-bullets li::before {
-    content: '\25B8'; position: absolute; left: 0;
-    color: var(--orange); font-size: 8px; top: 2px;
-  }
-  .exp-bullets li strong { color: var(--navy); font-weight: 600; }
-
-  .attributes-box {
+    align-items: center;
+    gap: 16px;
     background: var(--orange-bg);
     border-left: 3px solid var(--orange);
-    padding: 10px 14px;
+    padding: 14px 18px;
     border-radius: 0 4px 4px 0;
+    text-decoration: none;
+    transition: background 0.15s;
   }
-  .attributes-box p { font-size: 10px; color: var(--slate); line-height: 1.6; font-style: italic; }
+  .doc-link:hover { background: #F8E4D8; }
 
-  .twiddle-callout {
-    background: var(--navy);
-    border-left: 3px solid var(--orange);
-    padding: 10px 14px;
-    border-radius: 0 4px 4px 0;
-    margin-top: 4px;
+  .doc-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
   }
-  .twiddle-callout-label {
-    font-size: 8.5px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.12em; color: var(--orange-lt); margin-bottom: 4px;
-  }
-  .twiddle-callout p { font-size: 10px; color: #D1D5DB; line-height: 1.6; }
 
-  @page { size: letter; margin: 0; }
-
-  @media print {
-    body { background: #fff; font-size: 10px; }
-    .page { box-shadow: none; max-width: 100%; }
-    .sidebar {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      padding: 16px 14px 20px;
-      gap: 10px;
-    }
-    .main {
-      padding: 16px 22px 20px 18px;
-      gap: 8px;
-    }
-    .sidebar-divider { margin: 0; }
-    .section-heading { margin-bottom: 8px; padding-bottom: 3px; }
-    .exp-block { margin-bottom: 6px; }
-    .exp-sub { margin-bottom: 2px; }
-    .exp-title { margin-bottom: 3px; }
-    .exp-context { font-size: 9.5px; line-height: 1.5; margin-bottom: 3px; }
-    .exp-bullets { gap: 2px; }
-    .exp-bullets li { font-size: 9.5px; line-height: 1.42; }
-    .summary p { font-size: 10px; line-height: 1.5; }
-    .pill { font-size: 7.5px; padding: 1px 5px; }
-    .pill-group { gap: 3px; }
-    .artifact-list { gap: 2px; }
-    .artifact-list li { font-size: 8.5px; line-height: 1.3; }
-    .cert-text { font-size: 9px; }
-    .twiddle-callout { padding: 6px 10px; margin-top: 2px; }
-    .attributes-box { padding: 6px 10px; }
-    .attributes-box p { font-size: 9.5px; line-height: 1.5; }
+  .doc-info .doc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 2px;
   }
+  .doc-info .doc-desc {
+    font-size: 11px;
+    color: var(--mid);
+  }
+
+  .contact {
+    font-size: 11.5px;
+    color: var(--mid);
+    line-height: 1.9;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 24px;
+  }
+  .contact a { color: var(--orange); text-decoration: none; }
+  .contact a:hover { color: var(--orange-lt); }
+  .contact-row { display: flex; gap: 6px; align-items: baseline; }
+  .contact-label { font-weight: 600; color: var(--navy); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; min-width: 64px; }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="card">
+  <div class="accent"></div>
+  <div class="body">
 
-  <!-- == SIDEBAR == -->
-  <aside class="sidebar">
+    <h1>Jason Hogan</h1>
+    <div class="headline">Salesforce Solutions Architect &nbsp;&middot;&nbsp; Full-Stack Developer &nbsp;&middot;&nbsp; AI Engineer</div>
 
-    <div>
-      <div class="sidebar-name">Jason<br>Hogan</div>
-      <div class="sidebar-title">Salesforce Solutions Architect<br>&amp; AI Engineer</div>
+    <div class="divider"></div>
+
+    <p class="bio">
+      8.5 years of production Salesforce delivery across 7 clouds &mdash; Apex, LWC, Flow, CPQ, integrations, and AI engineering. Currently building <strong>Twiddle Box Development</strong>, a proprietary platform that makes production-quality Salesforce development accessible at scale.
+    </p>
+
+    <div class="doc-list">
+      <a class="doc-link" href="Jason_Hogan_Resume.html">
+        <div class="doc-icon">&#128196;</div>
+        <div class="doc-info">
+          <div class="doc-title">Resume</div>
+          <div class="doc-desc">Full work history, Apex &amp; LWC artifact catalog, skills</div>
+        </div>
+      </a>
+      <a class="doc-link" href="Jason_Hogan_CoverLetter.html">
+        <div class="doc-icon">&#9997;&#65039;</div>
+        <div class="doc-info">
+          <div class="doc-title">Cover Letter</div>
+          <div class="doc-desc">The why behind the career, AI methodology, and day-one value</div>
+        </div>
+      </a>
     </div>
 
-    <div class="sidebar-divider"></div>
-
-    <div>
-      <div class="sidebar-section-label">Contact</div>
-      <div class="contact-item">
-        <span class="contact-label">Location</span>
-        <span class="contact-value">St. George, Utah</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Phone</span>
-        <span class="contact-value">435-261-2333</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <span class="contact-value"><a href="mailto:jrhogan@gmail.com">jrhogan@gmail.com</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">LinkedIn</span>
-        <span class="contact-value"><a href="https://www.linkedin.com/in/jason-hogan1/" target="_blank">linkedin.com/in/jason-hogan1</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value"><a href="https://github.com/jrhogan77" target="_blank">github.com/jrhogan77</a></span>
-      </div>
+    <div class="contact">
+      <div class="contact-row"><span class="contact-label">Location</span> St. George, Utah</div>
+      <div class="contact-row"><span class="contact-label">Phone</span> 435-261-2333</div>
+      <div class="contact-row"><span class="contact-label">Email</span> <a href="mailto:jrhogan@gmail.com">jrhogan@gmail.com</a></div>
+      <div class="contact-row"><span class="contact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/jason-hogan1/" target="_blank">linkedin.com/in/jason-hogan1</a></div>
+      <div class="contact-row"><span class="contact-label">GitHub</span> <a href="https://github.com/jrhogan77" target="_blank">github.com/jrhogan77</a></div>
     </div>
 
-    <div class="sidebar-divider"></div>
-
-    <div>
-      <div class="sidebar-section-label">Certifications</div>
-      <div class="cert-item"><div class="cert-dot"></div><div class="cert-text">Salesforce Certified Administrator</div></div>
-      <div class="cert-item"><div class="cert-dot"></div><div class="cert-text">Salesforce Certified Advanced Administrator</div></div>
-      <div class="cert-item"><div class="cert-dot"></div><div class="cert-text">Salesforce Certified Platform App Builder</div></div>
-    </div>
-
-    <div class="sidebar-divider"></div>
-
-    <div>
-      <div class="sidebar-section-label">Apex &mdash; Production Classes</div>
-      <ul class="artifact-list">
-        <li><span class="artifact-label">AccountSequenceRestService</span>RESTful inbound endpoint &mdash; account sequence provisioning</li>
-        <li><span class="artifact-label">AccountSequenceRestServiceTest</span>Full coverage test suite for REST layer</li>
-        <li><span class="artifact-label">AccountSequenceService</span>Core service layer &mdash; sequence logic &amp; DML orchestration</li>
-        <li><span class="artifact-label">AccountSequenceServiceTest</span>Unit tests &mdash; service layer coverage</li>
-        <li><span class="artifact-label">GetAccountSequenceAction</span>@InvocableMethod &mdash; Flow-callable sequence retrieval</li>
-        <li><span class="artifact-label">SmartAddressBlockController</span>Apex controller &mdash; SAP DQM callout &amp; address validation pipeline</li>
-        <li><span class="artifact-label">SmartAddressBlockControllerTest</span>Test class &mdash; DQM callout mock &amp; assertion coverage</li>
-        <li><span class="artifact-label">PhoneInputController</span>Apex controller &mdash; phone normalization &amp; format enforcement</li>
-        <li><span class="artifact-label">PhoneInputControllerTest</span>Full coverage &mdash; phone validation logic</li>
-        <li><span class="artifact-label">SAP_AddressData</span>Data Transfer Object (DTO) &mdash; SAP address payload container</li>
-        <li><span class="artifact-label">SAP_AddressValidation</span>Callout class &mdash; SAP DQM REST integration &amp; response parsing</li>
-        <li><span class="artifact-label">SAP_AddressValidationTest</span>Mock callout test suite &mdash; SAP DQM response coverage</li>
-      </ul>
-    </div>
-
-    <div class="sidebar-divider"></div>
-
-    <div>
-      <div class="sidebar-section-label">LWC &mdash; Production Components</div>
-      <ul class="artifact-list">
-        <li><span class="artifact-label">smartAddressBlock</span>Multi-target address entry with live SAP DQM validation</li>
-        <li><span class="artifact-label">smartAddressBlockCPE</span>Custom Property Editor &mdash; CMDT-driven Flow Screen config</li>
-        <li><span class="artifact-label">smartFlowFooter</span>Reusable Flow navigation footer &mdash; dynamic action control</li>
-        <li><span class="artifact-label">smartFlowFooterCPE</span>Custom Property Editor &mdash; footer behavior configuration</li>
-        <li><span class="artifact-label">smartNavButton</span>Configurable Flow navigation button &mdash; conditional rendering</li>
-        <li><span class="artifact-label">customPhoneInput</span>Phone entry LWC &mdash; format enforcement &amp; Apex callout</li>
-        <li><span class="artifact-label">customHeader</span>Reusable branded header &mdash; dynamic title &amp; icon support</li>
-        <li><span class="artifact-label">brandedHeader</span>Full-bleed brand header &mdash; Flow Screen &amp; Record Page</li>
-        <li><span class="artifact-label">simpleFlowHeader</span>Lightweight header &mdash; single-line Flow Screen branding</li>
-        <li><span class="artifact-label">screenFlowBanner</span>Contextual banner &mdash; status, alerts &amp; guidance messaging</li>
-        <li><span class="artifact-label">flowActionCard</span>Card-style action selector &mdash; conditional logic &amp; routing</li>
-        <li><span class="artifact-label">flowValidationOverride</span>Client-side validation override &mdash; pre-navigation enforcement</li>
-        <li><span class="artifact-label">quoteNavigationHandler</span>CPQ quote navigation controller &mdash; stage &amp; step routing</li>
-        <li><span class="artifact-label">accountCreationTab</span>Account creation tab host &mdash; multi-step Flow orchestration</li>
-        <li><span class="artifact-label">universalWidgetSupreme</span>Universal display widget &mdash; multi-context record rendering</li>
-      </ul>
-    </div>
-
-    <div class="sidebar-divider"></div>
-
-    <div>
-      <div class="sidebar-section-label">Tools &amp; Platforms</div>
-      <div class="pill-group">
-        <span class="pill">Antigravity IDE</span>
-        <span class="pill">PowerShell</span>
-        <span class="pill">Git / GitHub</span>
-        <span class="pill">SFDMU</span>
-        <span class="pill">Salesforce DX</span>
-        <span class="pill">Node.js</span>
-        <span class="pill">Python</span>
-        <span class="pill">Apex</span>
-        <span class="pill">DTOs</span>
-        <span class="pill">CMDT</span>
-        <span class="pill">SOQL / SOSL</span>
-        <span class="pill">HTML &middot; CSS &middot; JS &middot; XML</span>
-        <span class="pill">Lightning Web Components</span>
-        <span class="pill">Flow Builder</span>
-        <span class="pill">Sales Cloud</span>
-        <span class="pill">Service Cloud</span>
-        <span class="pill">CPQ</span>
-        <span class="pill">Commerce Cloud</span>
-        <span class="pill">Marketing Cloud</span>
-        <span class="pill">Analytics Cloud</span>
-        <span class="pill">Experience Cloud</span>
-        <span class="pill">Google Apps Script</span>
-        <span class="pill">MCP Server</span>
-        <span class="pill">Claude (Anthropic)</span>
-        <span class="pill">Gemini (Google)</span>
-        <span class="pill">Einstein AgentForce</span>
-        <span class="pill">RESTful Endpoints</span>
-        <span class="pill">Prompt Engineering</span>
-        <span class="pill">AI Workflow Architecture</span>
-        <span class="pill">Gearset</span>
-        <span class="pill">Postman</span>
-        <span class="pill">SAP Integration</span>
-        <span class="pill">SAP DQM</span>
-        <span class="pill">Scrum / Agile</span>
-        <span class="pill">Data Migration</span>
-        <span class="pill">Data Governance</span>
-        <span class="pill">Security &amp; Compliance</span>
-        <span class="pill">Solutions Architecture</span>
-        <span class="pill">Full-Stack Development</span>
-        <span class="pill">AI Engineering</span>
-      </div>
-    </div>
-
-  </aside>
-
-  <!-- == MAIN == -->
-  <main class="main">
-
-    <div class="main-header">
-      <h1>Jason Hogan</h1>
-      <div class="headline">Salesforce Solutions Architect &nbsp;&middot;&nbsp; Full-Stack Developer &nbsp;&middot;&nbsp; AI Engineer</div>
-    </div>
-
-    <!-- Summary -->
-    <section class="summary">
-      <div class="section-heading">Professional Summary</div>
-      <p>
-        Full-stack Salesforce architect and AI engineer with <strong>8.5 years</strong> of production delivery across Sales Cloud, Service Cloud, CPQ, Commerce Cloud, Marketing Cloud, Analytics Cloud, and Experience Cloud. Designs and deploys enterprise-grade Apex, LWC, and integration solutions &mdash; and independently pioneered an AI-accelerated engineering methodology that drives architectural velocity without compromising platform security, governor limit compliance, or output quality. Architect of <strong>Twiddle Box Development</strong> &mdash; a proprietary platform applying this methodology to make production Salesforce development accessible at scale. Routinely runs <strong>multiple AI models in parallel</strong>, governing each with custom grounding frameworks, context-drift guardrails, and defined role boundaries. Delivers at architect altitude &mdash; callout classes, RESTful endpoints, DTOs, Flow XML at the metadata layer, and declarative orchestration &mdash; without a formal title to match.
-      </p>
-    </section>
-
-    <!-- Experience -->
-    <section>
-      <div class="section-heading">Professional Experience</div>
-
-      <!-- iFIT -->
-      <div class="exp-block">
-        <div class="exp-header">
-          <div>
-            <div class="exp-company">iFIT <span>(NordicTrack / ProForm / FreeMotion)</span></div>
-          </div>
-          <div class="exp-dates">January 2022 &ndash; May 2026</div>
-        </div>
-        <div class="exp-title">Senior Salesforce Administrator &nbsp;/&nbsp; Full-Stack Solutions Architect &amp; AI Engineer &mdash; Development &amp; Admin Team Lead</div>
-        <p class="exp-context">
-          Global fitness brand &mdash; 1,000+ users across the U.S., Canada, Europe, Australia, New Zealand, Mexico, and U.S. Territories. Independently owned the full Salesforce delivery lifecycle across 7 clouds &mdash; declarative, programmatic, and AI-engineered &mdash; evolving the function from Senior Administrator into a full-stack architecture and AI engineering role with no formal handoff and no outside direction.
-        </p>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">AI Engineering &amp; Prompt Architecture</div>
-          <ul class="exp-bullets">
-            <li>Designed and deployed production AI workflows running <strong>Claude (Anthropic) and Gemini (Google) in parallel</strong> across complex, multi-stage projects &mdash; each model governed by a shared sprint contract tracking independent work phases.</li>
-            <li>Authored a proprietary <strong>AI Engineering Standards framework</strong> &mdash; custom grounding techniques, context-drift guardrail placement, and prompt orchestration patterns &mdash; developed entirely without formal training, maintained as personal IP, and actively in use.</li>
-            <li>Built deep expertise in context window management and model drift detection &mdash; identifying context loss in real time and correcting course without session restarts.</li>
-            <li>Architected a multi-stage data migration solution using <strong>privately developed AI models</strong> and Antigravity IDE as the primary IDE &mdash; migrating both record data and metadata. Proprietary, personally developed intellectual property.</li>
-            <li>Implemented a <strong>Python / Node.js MCP server</strong> for local file system delivery driven by AI models &mdash; extending AI tooling directly into the development environment without a CLI dependency.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Einstein AgentForce</div>
-          <ul class="exp-bullets">
-            <li>Delivered a full Einstein AgentForce implementation leveraging knowledge articles, Next Best Action, invocable Apex in data flows, and custom declarative orchestration to drive AI-powered automation and intelligent service management.</li>
-            <li>Extended AgentForce beyond out-of-the-box capability through tight integration with custom Apex and Flow architecture.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Full-Stack Salesforce Development</div>
-          <ul class="exp-bullets">
-            <li>Orchestrated and personally architected a full <strong>SAP DQM callout solution</strong> &mdash; DTO container, invocable Apex classes, and multiple subflows that standardize, clean, and validate inbound address data. A locally triggered Screen Flow then presents validated and unvalidated fields for correction or override, re-validates against DQM logic, and packages the final address downstream into the account-creation record variable.</li>
-            <li>Designed and built production-grade <strong>LWC components with custom Property Editors (CPE)</strong> spanning .js, .html, .css, and .xml &mdash; including the multi-target Smart Address Block with CMDT-driven configuration, Flow Screen and Record Page targeting, and multi-org deployment support.</li>
-            <li>Architected <strong>callout classes, RESTful endpoints, back-end data operations, and DTOs</strong> enabling declarative Flows to pull and process data from custom Apex REST endpoints.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Commerce Cloud</div>
-          <ul class="exp-bullets">
-            <li>Built a custom <strong>end-user parts-ordering portal</strong> using standard HTML and CSS, fed through a custom Flow (loop, decision, update elements) generating a dynamic order-confirmation email populated line by line based exactly on what was ordered.</li>
-            <li>Configured economical pricing strategy across pricing rules, rule sets, discounts, and promotions for streamlined pricing distribution.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Analytics Cloud &amp; Security Data Governance</div>
-          <ul class="exp-bullets">
-            <li>Built event-monitoring data recipes and high-volume processing tasks that continuously analyze security data to detect and prevent unauthorized environment access.</li>
-            <li>Designed multiple dashboards surfacing every data ingestion risk point &mdash; visibility into potential downtime or resource waste before it became operational impact.</li>
-            <li>Led a 3-month data-cleanup initiative resulting in a net reduction of <strong>572,527+ records (11%)</strong> across 3 objects with full relational integrity preserved.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">CPQ</div>
-          <ul class="exp-bullets">
-            <li>Configured and maintained Salesforce CPQ for complex product-catalog and pricing workflows.</li>
-            <li>Executed a major production-to-sandbox migration using SFDMU across <strong>33 interdependent objects</strong>, including custom PowerShell automation and full dependency and referential-integrity management.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Flow Engineering via XML</div>
-          <ul class="exp-bullets">
-            <li>Manipulates Flow metadata directly at the XML layer in Antigravity IDE &mdash; searching, identifying, and updating large volumes of Flow records through an injectable XML process.</li>
-            <li>Architected 2 complex Flows end-to-end by authoring detailed generative instructions for Claude and Gemini to produce valid Flow XML, then injecting elements, decisions, and resources &mdash; with proper naming conventions and descriptions &mdash; directly into the Flow file.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Automation, Tooling &amp; Deployment</div>
-          <ul class="exp-bullets">
-            <li>Built a <strong>deployment notification tool</strong> enabling any admin to generate the exact specifications of a pending production deployment with a single button press.</li>
-            <li>Wrote custom <strong>Google Apps Scripts</strong> for Google Sheets enabling real-time UAT testing progress tracking without opening each individual test script.</li>
-            <li>Wrote a custom <strong>Google Apps Script</strong> to purge bad and outdated data from the shared Google Drive structure while creating a redundancy backup.</li>
-            <li>Wrote a custom <strong>Google Apps Script</strong> that transforms plain-text documentation containing visible markdown syntax into production-ready formatted Google Docs &mdash; automatically applying headings, font sizing, color theming, bold, tables with cell shading, and blockquote styling in a single execution.</li>
-          </ul>
-        </div>
-
-        <div class="exp-sub">
-          <div class="exp-sub-label">Regional Expansion &amp; Team Leadership</div>
-          <ul class="exp-bullets">
-            <li>Directed the declarative migration of Canada and Australia business divisions into Salesforce &mdash; support processes, automation, case management, chat, and Omni-Channel routing.</li>
-            <li>Forensically identified automation recursion, broken processes, and systemic inefficiencies; delegated resolution ownership to the admin team as a mentoring vehicle, improving efficiency by <strong>20%+</strong> while raising team confidence.</li>
-            <li>Authored the full documentation stack &mdash; technical design documents, UAT user manuals, testing scripts, admin run books, and user guides.</li>
-          </ul>
-        </div>
-
-        <div class="twiddle-callout">
-          <div class="twiddle-callout-label">Independent Initiative &mdash; Twiddle Box Development</div>
-          <p>Founder and sole architect of Twiddle Box Development &mdash; a proprietary AI-augmented Salesforce development platform built to make production-quality Salesforce artifacts accessible to any skill level at zero cost. Active development. Methodology and prompt architecture are private IP.</p>
-        </div>
-      </div>
-
-      <!-- TaskEasy -->
-      <div class="exp-block">
-        <div class="exp-header">
-          <div><div class="exp-company">TaskEasy / WorkWave</div></div>
-          <div class="exp-dates">March 2020 &ndash; January 2022</div>
-        </div>
-        <div class="exp-title">Salesforce Administrator &nbsp;/&nbsp; Jr. Developer &amp; Full-Stack Solutions Architect</div>
-        <p class="exp-context">
-          Supported 300+ Service Cloud users for a nationwide service provider &mdash; mentored by an 18x-certified Salesforce Systems Architect. Delivered development-grade solutions while holding an Administrator title.
-        </p>
-        <ul class="exp-bullets">
-          <li>Designed and implemented Service Cloud from the ground up, establishing best-practice foundations and data-integrity standards.</li>
-          <li>Architected a fully custom <strong>Jira-style Sprint Board object</strong> inside Salesforce &mdash; a permission-set-controlled ticketing system allowing authorized users to submit Salesforce requests, routed through a custom sprint board with full team visibility. Standalone architect, no external support.</li>
-          <li>Developed <strong>Visualforce</strong> pages and components &mdash; custom UI solutions beyond native Lightning capability.</li>
-          <li>Built and maintained <strong>AWS integrations</strong> &mdash; custom data pipeline connections between Salesforce and Amazon Web Services infrastructure.</li>
-          <li>Introduced in-house vendor-network support solutions, improving vendor turnover by <strong>15%</strong>.</li>
-          <li>Solely architected complex Finance-department automations, increasing productivity by <strong>35&ndash;45%</strong>.</li>
-        </ul>
-      </div>
-
-      <!-- Monumetric -->
-      <div class="exp-block">
-        <div class="exp-header">
-          <div><div class="exp-company">Monumetric</div></div>
-          <div class="exp-dates">November 2019 &ndash; March 2020</div>
-        </div>
-        <div class="exp-title">Salesforce Administrator / Junior Developer &nbsp;<span style="font-weight:400;color:#6B7280;font-size:9px;">(COO-acknowledged functional title)</span></div>
-        <p class="exp-context">
-          Primary Salesforce contact for 50+ Service Cloud users &mdash; and the architect of an integration that set the trajectory for everything that followed.
-        </p>
-        <ul class="exp-bullets">
-          <li>Engineered a <strong>tri-directional Jira / Salesforce / Slack integration</strong> from scratch during the technical interview process &mdash; zero prior formal Salesforce experience, zero third-party tools. Required stripping back and reverse-engineering existing automations, then unifying fragmented logic into a single cohesive process. Secured the hire. COO formally acknowledged the developer title.</li>
-          <li>Implemented a new Sales onboarding process, increasing Publisher/Customer satisfaction by <strong>32%</strong> and reducing revenue attrition by <strong>14% ($238K)</strong>.</li>
-          <li>Built reports, dashboards, and KPI-monitoring processes to alert management to underperformance in real time.</li>
-        </ul>
-      </div>
-
-    </section>
-
-    <!-- Professional Attributes -->
-    <section>
-      <div class="section-heading">Professional Attributes</div>
-      <div class="attributes-box">
-        <p>Known for handling conflict resolution with ease &mdash; leading with an intelligent, empathetic approach that brings out the best in difficult situations. Combines architect-level technical depth with a declarative-first mindset and an unwavering ethical commitment to delivering accurate, fully intact work. Operates with the same standard whether anyone is watching or not.</p>
-      </div>
-    </section>
-
-  </main>
+  </div>
 </div>
 </body>
 </html>
