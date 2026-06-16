@@ -11,8 +11,8 @@ Professional documents authored entirely in HTML and CSS — no frameworks, no b
 | File | Description |
 |------|-------------|
 | `index.html` | Resume — GitHub Pages live view |
-| `Jason_Hogan_Resume_v2.html` | Resume — named copy for direct download/sharing |
-| `Jason_Hogan_Resume_v2.pdf` | Resume — print-ready PDF, zero-margin full-bleed |
+| `Jason_Hogan_Resume.html` | Resume — named copy for direct download/sharing |
+| `Jason_Hogan_Resume.pdf` | Resume — print-ready PDF, zero-margin full-bleed |
 | `Jason_Hogan_CoverLetter.html` | Cover letter — matching design system |
 | `Jason_Hogan_CoverLetter.pdf` | Cover letter — print-ready PDF |
 
@@ -33,6 +33,6 @@ Professional documents authored entirely in HTML and CSS — no frameworks, no b
 
 ## Contact
 
-- Email: [jrhogan@gmail.com](mailto:jrhogan@gmail.com)
+- Email: [jason@twiddlebox.io](mailto:jason@twiddlebox.io)
 - LinkedIn: [linkedin.com/in/jason-hogan1](https://www.linkedin.com/in/jason-hogan1/)
 - GitHub: [github.com/jrhogan77](https://github.com/jrhogan77)
