@@ -1,177 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Jason Hogan &mdash; Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Hogan - Resume</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --orange:    #D4622A;
-    --orange-lt: #F0845A;
-    --orange-bg: #FDF3EE;
-    --navy:      #1A1F2E;
-    --slate:     #3D4454;
-    --mid:       #6B7280;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #F4F4F0;
-    color: var(--navy);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-  }
-
-  .card {
-    background: #fff;
-    max-width: 680px;
-    width: 100%;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
-    display: flex;
-    overflow: hidden;
-  }
-
-  .accent {
-    width: 6px;
-    background: var(--orange);
-    flex-shrink: 0;
-  }
-
-  .body {
-    padding: 52px 48px 52px 44px;
-    flex: 1;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--navy);
-    letter-spacing: 0.01em;
-    line-height: 1.1;
-  }
-
-  .headline {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 6px;
-    margin-bottom: 28px;
-  }
-
-  .divider {
-    height: 2px;
-    background: var(--orange);
-    border-radius: 2px;
-    margin-bottom: 28px;
-  }
-
-  .bio {
-    font-size: 13px;
-    color: var(--slate);
-    line-height: 1.75;
-    margin-bottom: 36px;
-  }
-
-  .doc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 36px;
-  }
-
-  .doc-link {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--orange-bg);
-    border-left: 3px solid var(--orange);
-    padding: 14px 18px;
-    border-radius: 0 4px 4px 0;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .doc-link:hover { background: #F8E4D8; }
-
-  .doc-icon {
-    font-size: 22px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-
-  .doc-info .doc-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 2px;
-  }
-  .doc-info .doc-desc {
-    font-size: 11px;
-    color: var(--mid);
-  }
-
-  .contact {
-    font-size: 11.5px;
-    color: var(--mid);
-    line-height: 1.9;
-    border-top: 1px solid #E5E7EB;
-    padding-top: 24px;
-  }
-  .contact a { color: var(--orange); text-decoration: none; }
-  .contact a:hover { color: var(--orange-lt); }
-  .contact-row { display: flex; gap: 6px; align-items: baseline; }
-  .contact-label { font-weight: 600; color: var(--navy); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; min-width: 64px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 9.5pt; line-height: 1.3; color: #000; background: #fff; }
+  .page { max-width: 8.5in; margin: 0 auto; padding: 0.5in 0.6in; }
+  h1 { font-size: 18pt; text-transform: uppercase; letter-spacing: 0.02em; }
+  .headline { font-size: 11pt; font-weight: bold; margin-top: 2px; }
+  .contact { font-size: 9pt; margin-top: 3px; padding-bottom: 5px; border-bottom: 1.5pt solid #DC5924; }
+  .contact a { color: #000; text-decoration: none; }
+  h2 { font-size: 10pt; text-transform: uppercase; border-bottom: 1pt solid #DC5924; padding-bottom: 1px; margin: 10px 0 4px; }
+  h3 { font-size: 10pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 7px; }
+  .dates { font-weight: bold; color: #595959; white-space: nowrap; }
+  .role { font-weight: bold; font-style: italic; margin-bottom: 2px; }
+  p { margin-bottom: 2px; }
+  p.tight { margin-bottom: 1px; }
+  ul { margin: 2px 0 0 18px; }
+  li { margin-bottom: 1px; }
+  .entry { break-inside: auto; }
+  @page { size: letter; margin: 0; }
+  @media print { .page { max-width: none; } }
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="accent"></div>
-  <div class="body">
+<div class="page">
+<h1>Jason Hogan</h1>
+<p class="headline">Senior Salesforce Administrator and Solutions Architect</p>
+<p class="contact">St. George, Utah (Remote) | 435-261-2333 | <a href="mailto:jason@twiddlebox.io">jason@twiddlebox.io</a> | <a href="https://www.linkedin.com/in/jason-hogan1/">linkedin.com/in/jason-hogan1</a> | <a href="https://github.com/jrhogan77">github.com/jrhogan77</a></p>
 
-    <h1>Jason Hogan</h1>
-    <div class="headline">Salesforce Solutions Architect &nbsp;&middot;&nbsp; Full-Stack Developer &nbsp;&middot;&nbsp; AI Engineer</div>
+<h2>Professional Summary</h2>
+<p>Senior Salesforce Administrator and solutions architect with 8.5 years of Salesforce experience across Sales Cloud, Service Cloud, CPQ, Commerce Cloud and CRM Analytics. Most recently led a two-person admin team supporting 500+ users for a global fitness brand, pairing declarative-first administration (Flow, security, data quality and documentation) with hands-on Apex, Lightning Web Components (LWC) and REST integration work, including an SAP address-validation integration. Known for cleaning up complex orgs, mentoring admins and translating business requirements into solutions that hold up in production. Uses custom AI models under a self-built governance framework to deliver faster without compromising security or governor limits.</p>
 
-    <div class="divider"></div>
+<h2>Core Skills</h2>
+<p class="tight"><strong>Administration:</strong> Sales Cloud, Service Cloud, Case Management, Permission Sets, Security and Access, Event Monitoring, Data Quality and Cleanup, Reports and Dashboards, User Management, UAT</p><p class="tight"><strong>Automation and Development:</strong> Salesforce Flow (Screen Flows, Subflows), Flow XML, Apex, Lightning Web Components (LWC), Custom Property Editors, Visualforce, SOQL, SOSL, Custom Metadata Types (CMDT), Invocable Actions</p><p class="tight"><strong>Integration and Data:</strong> Apex REST APIs, Callouts, SAP DQM, AWS, Jira and Slack, Postman, SFDMU Data Migration, Referential Integrity</p><p class="tight"><strong>Clouds and Products:</strong> CPQ, Commerce Cloud, CRM Analytics, Marketing Cloud, Experience Cloud, Agentforce, Einstein Next Best Action, Knowledge</p><p class="tight"><strong>DevOps and Tools:</strong> Salesforce DX, Gearset, Git and GitHub, PowerShell, Node.js, Python, Google Apps Script, Antigravity IDE</p><p class="tight"><strong>Practices:</strong> Solution Design, Business Requirements, Technical Design Documents, Admin Runbooks, Scrum and Agile, Team Mentoring, Prompt Engineering, MCP Server</p>
 
-    <p class="bio">
-      8.5 years of production Salesforce delivery across 7 clouds &mdash; Apex, LWC, Flow, CPQ, integrations, and AI engineering. Currently building <strong>Twiddle Box Development</strong>, a proprietary platform that makes production-quality Salesforce development accessible at scale.
-    </p>
+<h2>Certifications</h2>
+<p>Salesforce Certified Administrator | Salesforce Certified Advanced Administrator | Salesforce Certified Platform App Builder | Salesforce Certified AI Associate</p>
 
-    <div class="doc-list">
-      <a class="doc-link" href="Jason_Hogan_Resume.html">
-        <div class="doc-icon">&#128196;</div>
-        <div class="doc-info">
-          <div class="doc-title">Resume</div>
-          <div class="doc-desc">Full work history, Apex &amp; LWC artifact catalog, skills</div>
-        </div>
-      </a>
-      <a class="doc-link" href="Jason_Hogan_CoverLetter.html">
-        <div class="doc-icon">&#9997;&#65039;</div>
-        <div class="doc-info">
-          <div class="doc-title">Cover Letter</div>
-          <div class="doc-desc">The why behind the career, AI methodology, and day-one value</div>
-        </div>
-      </a>
-    </div>
+<h2>Professional Experience</h2>
+<div class="entry"><div class="row"><h3>iFIT (NordicTrack, ProForm, FreeMotion)</h3><span class="dates">January 2022 - May 2026</span></div><p class="role">Senior Salesforce Administrator (Admin Team Lead)</p><p>Global fitness brand with 500+ users across the U.S., Canada, Europe, Australia, New Zealand, Mexico and U.S. territories. Led 2 administrators in the U.S. and Europe, mentored 1 developer on declarative best practices, and assisted with the full Salesforce delivery lifecycle across 5 clouds.</p><ul><li>Led a 3-month data cleanup that removed 572,527+ records (11%) across 3 objects while keeping every related record intact.</li><li>Found and fixed automation recursion, broken processes and poor performance, improving efficiency 20%+ while delegating fixes to build the admin team&#x27;s skills.</li><li>Concluded the declarative migration of the Canada and Australia business units into Salesforce, covering support processes, automation and case management.</li><li>Architected an SAP DQM address-validation integration (DTO, invocable Apex and subflows) that standardizes and validates inbound addresses, with a Screen Flow for review and override.</li><li>Built Lightning Web Components with Custom Property Editors, including a multi-target Smart Address Block configured through Custom Metadata Types for Flow screens and record pages.</li><li>Built Apex REST endpoints, callout classes and DTOs so declarative Flows could pull and process data from external systems.</li><li>Assisted with an Agentforce implementation alongside consultancy a360, covering knowledge articles, Einstein Next Best Action, layouts and production deployment, and translated the consultancy&#x27;s deliverables into production-ready Apex and Flow.</li><li>Built CRM Analytics event-monitoring recipes and dashboards that flag unauthorized access and data-ingestion risks before they affect operations.</li><li>Migrated production data to sandbox across 33 interdependent objects with SFDMU and PowerShell automation, preserving referential integrity.</li><li>Configured and assisted in maintaining Salesforce CPQ for a complex product catalog and pricing; in Commerce Cloud, configured pricing rules, discounts and promotions and built a Flow-driven order-confirmation email for a parts-ordering portal.</li><li>Updated large numbers of Flows directly in Flow XML, and built 2 complex Flows by directing custom AI models to produce valid Flow XML.</li><li>Ran custom AI models in parallel on multi-stage projects under a self-authored AI engineering standards framework, and built a Python and Node.js MCP server that gives AI tools local file access.</li><li>Built a one-click deployment notification tool and Google Apps Scripts for UAT tracking, Drive cleanup and document formatting.</li><li>Wrote the documentation stack: technical design documents, UAT manuals, test scripts and admin runbooks.</li></ul></div><div class="entry"><div class="row"><h3>TaskEasy / WorkWave</h3><span class="dates">March 2020 - January 2022</span></div><p class="role">Salesforce Administrator</p><p>Supported 300+ Service Cloud users for a nationwide service provider, mentored by an 18x-certified Salesforce systems architect, and delivered development-level solutions.</p><ul><li>Designed and implemented Service Cloud from the ground up, setting best-practice foundations and data-integrity standards.</li><li>Solely architected the Finance department&#x27;s complex automations, increasing productivity 35-45%.</li><li>Introduced in-house vendor-network support solutions, improving vendor turnover by 15%.</li><li>Built a custom sprint board and ticketing system inside Salesforce, controlled by Permission Sets, so authorized users could submit and track Salesforce requests.</li><li>Developed Visualforce pages and components and maintained AWS data integrations with Salesforce.</li></ul></div><div class="entry"><div class="row"><h3>Monumetric</h3><span class="dates">November 2019 - March 2020</span></div><p class="role">Salesforce Administrator - Jr. Developer</p><p>Primary point of contact for 50+ Service Cloud users.</p><ul><li>Researched and built a fully custom, in-house Slack and Jira integration with no third-party tools, alerting users by direct message with Jira status updates and reminders and reducing ticket resolution time by 25%.</li><li>Identified and implemented a new Sales onboarding process with visual guidance for the Sales team, increasing surveyed publisher and customer satisfaction by 32% and reducing revenue attrition by 14% ($238K).</li><li>Built reports, dashboards and processes to monitor Sales and Account team metrics, alerting reps and managers when KPIs fell below company standards.</li></ul></div>
 
-    <div class="contact">
-      <div class="contact-row"><span class="contact-label">Location</span> St. George, Utah</div>
-      <div class="contact-row"><span class="contact-label">Phone</span> 435-261-2333</div>
-      <div class="contact-row"><span class="contact-label">Email</span> <a href="mailto:jrhogan@gmail.com">jrhogan@gmail.com</a></div>
-      <div class="contact-row"><span class="contact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/jason-hogan1/" target="_blank">linkedin.com/in/jason-hogan1</a></div>
-      <div class="contact-row"><span class="contact-label">GitHub</span> <a href="https://github.com/jrhogan77" target="_blank">github.com/jrhogan77</a></div>
-    </div>
+<h2>Projects</h2>
+<div class="entry"><div class="row"><h3>twiddlebox.io (Twiddle Box Development LLC)</h3><span class="dates">2026 - Present</span></div><p class="role">Co-founder and Chief Executive Officer</p><ul><li>Co-founded with Kristina Hogan a software company building tools that let people create production Salesforce work without a development background.</li><li>Lead architect and primary developer of a full-stack build spanning Apex, LWC, Flow XML and AI orchestration; core architecture is in place.</li></ul></div>
 
-  </div>
+<h2>Selected Salesforce Builds</h2>
+<p class="tight"><strong>Apex:</strong> AccountSequenceRestService, AccountSequenceService, GetAccountSequenceAction, SmartAddressBlockController, PhoneInputController, SAP_AddressValidation and SAP_AddressData, each with its own test class</p><p class="tight"><strong>Lightning Web Components:</strong> smartAddressBlock and smartFlowFooter (each with a Custom Property Editor), smartNavButton, customPhoneInput, flowActionCard, flowValidationOverride, quoteNavigationHandler, accountCreationTab, screenFlowBanner and branded Flow headers</p>
+
+<h2>Professional Attributes</h2>
+<p>Handles conflict with an intelligent, empathetic approach that brings out the best in difficult situations. Combines architect-level technical depth with a declarative-first mindset and a firm commitment to accurate, complete work, with the same standard whether anyone is watching or not.</p>
 </div>
 </body>
 </html>
